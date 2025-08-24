@@ -57,11 +57,13 @@ input_data = pd.concat([input_data.reset_index(drop=True), geo_encoded_df], axis
 # Scale the input data
 input_data_scaled = scaler.transform(input_data)
 
+st.line_chart(input_data)
 
 # Predict Salary
 prediction = model.predict(input_data_scaled)
 
 
 st.write(f'Estimated Salary of a Customer: {prediction}')
+
 
 
